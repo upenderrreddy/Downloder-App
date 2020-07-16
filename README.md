@@ -1,5 +1,6 @@
 # Downloader App
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/upenderrreddy/Downloder-App/blob/master/LICENSE.md)
+
 This is an App created using Python, pafi, and PyQt
 
 ### Features
