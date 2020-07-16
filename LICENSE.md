@@ -1,5 +1,5 @@
 MIT License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/upenderrreddy/Downloder-App/blob/master/LICENSE.md)
+
 
 Copyright (c) 2020 G Upender Reddy
 
