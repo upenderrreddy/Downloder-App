@@ -8,5 +8,8 @@
 		<file>icons/download_file.png</file>
 		<file>icons/settings.png</file>
 		<file>icons/youtube.png</file>
+		<file>icons/home_download.png</file>
+		<file>icons/home_settings.png</file>
+		<file>icons/playlist.png</file>
 	</qresource>
 </RCC>
