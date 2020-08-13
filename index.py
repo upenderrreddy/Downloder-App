@@ -21,7 +21,8 @@ class MainApp(QMainWindow, ui):
 
     def init_ui(self):
         # contains all ui changes in loading
-        pass
+        # hiding tab bar
+        self.tabWidget.tabBar().setVisible(False)
 
     def handle_buttons(self):
         # handle all buttons in the App
@@ -45,6 +46,14 @@ class MainApp(QMainWindow, ui):
 
         # playlist save browse
         self.pushButton_16.clicked.connect(self.playlist_save_browse)
+
+        # connecting UI buttons
+        self.pushButton_2.clicked.connect(self.open_home)
+        self.pushButton_7.clicked.connect(self.open_download)
+        self.pushButton_5.clicked.connect(self.open_youtube)
+        self.pushButton_3.clicked.connect(self.open_dettings)
+
+
 
     def handle_progress(self, block_no, block_size, total_size):
         # calculate the progress
@@ -178,17 +187,33 @@ class MainApp(QMainWindow, ui):
     def playlist_progress(self, total, received, ratio, rate, time):
         read_data = received
         if total > 0:
-            download_percentage = read_data * 100 / total
+            download_percentage = read_data * 100 // total
             self.progressBar_4.setValue(download_percentage)
             remaining_time = round(time / 60, 2)
 
             self.label_6.setText(str('{} minutes remaining'.format(remaining_time)))
             QApplication.processEvents()
+
     def playlist_save_browse(self):
         # save location in the line edit
-        save_location = QFileDialog.getExistingDirectory(self , "Select Download Directory")
+        save_location = QFileDialog.getExistingDirectory(self, "Select Download Directory")
         # print(save_location)  #
         self.lineEdit_8.setText(save_location)
+
+    # UI Changes methods #
+    def open_home(self):
+        self.tabWidget.setCurrentIndex(0)
+
+    def open_download(self):
+        self.tabWidget.setCurrentIndex(1)
+
+    def open_youtube(self):
+        self.tabWidget.setCurrentIndex(2)
+
+    def open_dettings(self):
+        self.tabWidget.setCurrentIndex(3)
+
+
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
